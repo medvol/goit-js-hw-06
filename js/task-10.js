@@ -23,7 +23,7 @@ function createBoxes(amount) {
        
   }
 
-  return elements;
+  containerBoxes.append(...elements);
    
 }
 
@@ -32,11 +32,7 @@ createBtn.addEventListener('click', onClickCreateBtn)
 
 function onClickCreateBtn(event) {
 
-  const elements = createBoxes(input.value);
-
-  containerBoxes.append(...elements);
-
-  
+  createBoxes(input.value);
 
 };
 

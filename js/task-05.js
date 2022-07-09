@@ -6,12 +6,11 @@ const elements = {
 elements.input.addEventListener('input', onTextInput);
 
 function onTextInput(event) {
-          
-    if (event.currentTarget.value.trim() === '') {
-        return elements.namLabel.textContent = 'Anonymous';
+    
+    if (event.currentTarget.value.trim() !== '') {
+
+        elements.namLabel.textContent = event.currentTarget.value.trim();
            
     }
-
-     return elements.namLabel.textContent = event.currentTarget.value.trim();
-    
+  
 }
