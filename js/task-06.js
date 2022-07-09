@@ -4,11 +4,18 @@ inputEl.addEventListener('blur', onCheckInputText);
 
 function onCheckInputText(event) {
       
-    if (Number(event.currentTarget.value.trim().length)  === Number(inputEl.dataset.length)) {
-        return inputEl.classList.add('valid');
+    if (event.currentTarget.value.trim().length   !== parseInt(inputEl.dataset.length)) {
         
+        inputEl.classList.add('invalid');
+        inputEl.classList.remove('valid');
+
     }
 
-    return inputEl.classList.add('invalid');
-    
+    if (event.currentTarget.value.trim().length   === parseInt(inputEl.dataset.length)) {
+              
+        inputEl.classList.add('valid');
+        inputEl.classList.remove('invalid');
+
+    }
+
 }
